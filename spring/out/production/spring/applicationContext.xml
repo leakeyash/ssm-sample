@@ -20,5 +20,6 @@
     <bean name="product" class="pojo.Product">
         <property name="name" value="test product name" />
         <property name="value" value="test product value" />
+        <property name="category" ref="c" />
     </bean>
 </beans>

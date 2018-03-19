@@ -14,5 +14,6 @@ public class TestProduct {
 
         System.out.println(product.getName());
         System.out.println(product.getValue());
+        System.out.println(product.getCategory().getName());
     }
 }
