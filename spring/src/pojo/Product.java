@@ -1,5 +1,7 @@
 package pojo;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 public class Product {
     public int getId() {
         return id;
@@ -22,6 +24,7 @@ public class Product {
     private int id;
     private String name;
     private String value;
+    @Autowired
     private Category category;
     public Category getCategory() {
         return category;
