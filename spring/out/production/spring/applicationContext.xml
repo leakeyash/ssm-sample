@@ -16,22 +16,24 @@
 
     <context:component-scan base-package="pojo"/>
     <context:component-scan base-package="service"/>
-    <bean id="loggerAspect" class="aspect.LoggerAspect"/>
-    <bean id="executionTimeAspect" class="aspect.ExecutionTimeAspect"></bean>
-    <aop:config>
-        <aop:pointcut id="loggerCutPoint"
-                      expression=
-                              "execution(* service.ProductService.*(..)) "/>
+    <context:component-scan base-package="aspect"/>
+    <aop:aspectj-autoproxy/>
+    <!--<bean id="loggerAspect" class="aspect.LoggerAspect"/>-->
+    <!--<bean id="executionTimeAspect" class="aspect.ExecutionTimeAspect"></bean>-->
+    <!--<aop:config>-->
+        <!--<aop:pointcut id="loggerCutPoint"-->
+                      <!--expression=-->
+                              <!--"execution(* service.ProductService.*(..)) "/>-->
 
-        <aop:aspect id="logAspect" ref="loggerAspect">
-            <aop:around pointcut-ref="loggerCutPoint" method="log"/>
-        </aop:aspect>
-        <aop:aspect ref="executionTimeAspect">
-            <aop:pointcut expression="execution(* service.ProductService.doAnotherService(..))" id="say"/>
-            <aop:before pointcut-ref="say" method="startExecuting"/>
-            <aop:after pointcut-ref="say" method="endExecuting"/>
-        </aop:aspect>
-    </aop:config>
+        <!--<aop:aspect id="logAspect" ref="loggerAspect">-->
+            <!--<aop:around pointcut-ref="loggerCutPoint" method="log"/>-->
+        <!--</aop:aspect>-->
+        <!--<aop:aspect ref="executionTimeAspect">-->
+            <!--<aop:pointcut expression="execution(* service.ProductService.doAnotherService(..))" id="say"/>-->
+            <!--<aop:before pointcut-ref="say" method="startExecuting"/>-->
+            <!--<aop:after pointcut-ref="say" method="endExecuting"/>-->
+        <!--</aop:aspect>-->
+    <!--</aop:config>-->
     <!--<context:annotation-config/>-->
     <!--<bean name="c" class="pojo.Category">-->
         <!--<property name="name" value="category 1" />-->
