@@ -13,6 +13,6 @@ public class TestProductService {
         ProductService productService = (ProductService) context.getBean("productService");
 
         productService.doSomeService();
-
+        productService.doAnotherService();
     }
 }
