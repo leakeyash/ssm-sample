@@ -13,13 +13,15 @@
    http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
    http://www.springframework.org/schema/context
    http://www.springframework.org/schema/context/spring-context-3.0.xsd">
-    <context:annotation-config/>
-    <bean name="c" class="pojo.Category">
-        <property name="name" value="category 1" />
-    </bean>
-    <bean name="product" class="pojo.Product">
-        <property name="name" value="test product name" />
-        <property name="value" value="test product value" />
-        <!--<property name="category" ref="c" />-->
-    </bean>
+
+    <context:component-scan base-package="pojo"/>
+    <!--<context:annotation-config/>-->
+    <!--<bean name="c" class="pojo.Category">-->
+        <!--<property name="name" value="category 1" />-->
+    <!--</bean>-->
+    <!--<bean name="product" class="pojo.Product">-->
+        <!--<property name="name" value="test product name" />-->
+        <!--<property name="value" value="test product value" />-->
+        <!--&lt;!&ndash;<property name="category" ref="c" />&ndash;&gt;-->
+    <!--</bean>-->
 </beans>

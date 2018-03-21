@@ -1,5 +1,8 @@
 package pojo;
 
+import org.springframework.stereotype.Component;
+
+@Component("category")
 public class Category {
 
     public int getId() {
@@ -15,6 +18,6 @@ public class Category {
         this.name = name;
     }
     private int id;
-    private String name;
+    private String name = "initialized Category";
 }
 

@@ -1,9 +1,11 @@
 package pojo;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import javax.annotation.Resource;
 
+@Component("product")
 public class Product {
     public int getId() {
         return id;
@@ -24,9 +26,10 @@ public class Product {
         this.value = value;
     }
     private int id;
-    private String name;
-    private String value;
-    @Resource(name = "c")
+    private String name = "initialized Product name";
+    private String value = "initialized product value";
+//    @Resource(name = "category")
+    @Autowired
     private Category category;
     public Category getCategory() {
         return category;
