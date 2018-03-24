@@ -12,4 +12,9 @@ public class ProductController {
         ModelAndView mav = new ModelAndView("showProduct");
         return mav;
     }
+    @RequestMapping("/addCategory")
+    public ModelAndView addCategory(Product product) throws Exception {
+        ModelAndView mav = new ModelAndView("showCategory");
+        return mav;
+    }
 }
