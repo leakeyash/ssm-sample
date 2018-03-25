@@ -12,6 +12,6 @@
   </head>
   <body>
   <h1>${message}</h1>
-  $END$
+  <p>${date}</p>
   </body>
 </html>

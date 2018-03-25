@@ -17,7 +17,7 @@ public class UploadController {
             throws IllegalStateException, IOException {
 
         String name = randomAlphanumeric(10);
-        String newFileName = name + ".jpg";
+        String newFileName = name + getExtensionName(file.getImage().getOriginalFilename());
         File newFile = new File(request.getServletContext().getRealPath("/image"), newFileName);
         newFile.getParentFile().mkdirs();
         file.getImage().transferTo(newFile);
@@ -33,5 +33,10 @@ public class UploadController {
             sb.append((char)(int)(Math.random()*26+97));
         }
         return sb.toString();
+    }
+
+    private String getExtensionName(String fileName){
+        Integer index= fileName.lastIndexOf('.');
+        return fileName.substring(index);
     }
 }
